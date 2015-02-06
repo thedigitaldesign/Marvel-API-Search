@@ -1,0 +1,51 @@
+﻿<section class="margin-top-40">
+    <div class="col-xs-12 margin-bottom-10">
+        <form name="SearchCharacters" ng-submit="SearchCharacters.$valid && character.SearchCharacters(character.search)" class="form-group form-group-lg">
+            <div class="input-group input-group-lg">
+                <input type="text" ng-model="character.search" placeholder="Character name" class="form-control" required />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Find character</button>
+                </span>
+            </div>
+            <em class="inline-block margin-top-5">e.g. Wolverine, Black Widow, Hulk, Iron Man, Storm, <a href="http://marvel.com/comics/characters" target="_blank">Marvel characters</a></em>
+        </form>
+    </div>
+
+    <aside id="character-bio" class="col-xs-12 col-sm-4">
+        <header>
+            <img src="{{character.details.thumbnail.path}}.{{character.details.thumbnail.extension}}" class="col-xs-12 no-float no-padding" />
+            <h1>
+                {{character.details.name}}
+            </h1>
+        </header>
+        <p>
+            {{character.details.description}}
+        </p>
+        <ul id="character-appearances" class="inline-list text-center margin-top-20 margin-bottom-20 clearfix">
+            <li class="col-xs-3">
+                <strong>Comics</strong>
+                {{character.details.comics.available}}
+            </li>
+            <li class="col-xs-3">
+                <strong>Series</strong>
+                {{character.details.series.available}}
+            </li>
+            <li class="col-xs-3">
+                <strong>Stories</strong>
+                {{character.details.stories.available}}
+            </li>
+            <li class="col-xs-3">
+                <strong>Events</strong>
+                {{character.details.events.available}}
+            </li>
+        </ul>
+    </aside>
+
+    <div class="col-xs-12 col-sm-8">
+        <highchart id="chart1" config="chartConfig"></highchart>
+        <div class="ajax-loader" style="display: none;">
+            <img src="Content/images/preloader-w8-line-black.gif" /><br />
+            Loading
+        </div>
+    </div>
+</section>

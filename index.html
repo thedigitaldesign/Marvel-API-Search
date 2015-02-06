@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ObservePoint Assessment - Joshua Christensen</title>
+
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css' />
+    <link href="Content/css/site.base.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--
+        Assessment: Create a responsive website that taps into an API and shows meaningful data
+
+        Project: Use the Marvel API to get character information and return interesting facts
+                 about the character.
+
+        Marvel API limitations:
+            - 3000 calls a per day
+
+        Functionality
+            - Search for a character
+            - Show interesting stats
+                - Super powers
+                - How many comics they have been in
+                - Villans/Heros fought
+                - Anything interesting
+    -->
+
+    <div class="container" ng-controller="MarvelUniversController as character">
+        <div class="row">
+            <div marvel-character-details></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- begin:Libraries -->
+    <script src="Scripts/angularjs/library/angular-resource.min.js"></script>
+    <!-- end:Libraries -->
+    <!-- begin:App -->
+    <script src="Scripts/angularjs/app/app.js"></script>
+    <!-- end:App -->
+    <!-- begin:Services -->
+    <script src="Scripts/angularjs/app/services/services.js"></script>
+    <!-- end:Services -->
+    <!-- begin:Controllers -->
+    <script src="Scripts/angularjs/app/controllers/marvel-univers.js"></script>
+    <!-- end:Controllers -->
+    <!-- begin:Directives -->
+    <script src="Scripts/angularjs/app/directives/_marvel-character-details.js"></script>
+    <!-- end:Directives -->
+    <!-- begin:Plugins -->
+    <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
+    <script src="Scripts/angularjs/library/plugins/highcharts-ng.min.js"></script>
+    <!-- end:Plugins -->
+
+</body>
+</html>
