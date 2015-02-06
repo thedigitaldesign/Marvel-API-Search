@@ -1,5 +1,5 @@
 ﻿#character-bio img {
-  border-radius: 200px;
+  border-radius: 100%;
 }
 #character-bio #character-appearances li strong {
   display: block;
