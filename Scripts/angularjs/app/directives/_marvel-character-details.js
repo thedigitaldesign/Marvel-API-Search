@@ -16,30 +16,31 @@
                 $scope.search = {};
 
                 var CharacterDetails = function () {
-                    character.details = {};
-
                     var totals = [],
-                        years = [];
-
-                    var today = new Date(),
-                        yyyy = today.getFullYear();
-
-                    var year = yyyy,
+                        years = [],
+                        today = new Date(),
+                        yyyy = today.getFullYear(),
+                        year = yyyy,
                         range = 5,
                         stop = year,
                         start = year - range;
+
+                    character.details = {};
 
                     //-- API
                     var GetCharacterDetails = GetMarvelCharacterInfo.query({
                         CharacterName: characterName
                     });
 
+                    // This is the basis of all data gathering. I need the character id to
+                    // perform narrowed searches to improve load times.
                     GetCharacterDetails.$promise.then(function (response) {
                         character.details = response.data.results[0];
                         characterId = character.details.id;
                         CharacterHistory([start, characterId]);
                     });
 
+                    // Looping through to get back data based off of year
                     var CharacterHistory = function (data) {
                         characterId = data[1],
                         year = data[0];
@@ -61,6 +62,7 @@
                             }
                         });
                     };
+                    //-- End
 
                     //-- highcharts-ng
                     function CreateGraph(totals, years) {
@@ -104,6 +106,7 @@
                             $scope.$broadcast('highchartsng.reflow');
                         };
                     }
+                    //-- End
                 };
                 
                 CharacterDetails();
