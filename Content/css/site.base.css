@@ -7481,8 +7481,20 @@ em {
 .ajax-loader img {
   margin-top: 50%;
 }
-#character-bio img {
+#character-bio header {
+  text-align: center;
+}
+#character-bio header img {
   border-radius: 100%;
+  max-width: 360px;
+}
+#character-bio header h1 {
+  text-align: left;
+}
+@media (max-width: 768px) {
+  #character-bio header h1 {
+    text-align: center;
+  }
 }
 #character-bio #character-appearances li strong {
   display: block;

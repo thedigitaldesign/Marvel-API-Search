@@ -1,6 +1,19 @@
 ﻿#character-bio {
-    img {
-        border-radius: 100%;
+    header {
+        text-align: center;
+
+        img {
+            border-radius: 100%;
+            max-width: 360px;
+        }
+
+        h1 {
+            text-align: left;
+
+            @media(max-width: @screen-tablet) {
+                text-align: center;
+            }
+        }
     }
 
     #character-appearances {
